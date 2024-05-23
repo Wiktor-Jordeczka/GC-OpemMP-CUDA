@@ -6,6 +6,7 @@
 #include <set>
 #include <cstring>
 #include <chrono>
+#include <omp.h>
 using namespace std;
 
 typedef struct Specimen {
@@ -105,6 +106,7 @@ Specimen tournamentSelection(Specimen* population, int populationSize) { // turn
 // Krzyżowanie
 void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Specimen& offspring2, int numOfVertices) {
     int pivot = randomNumber(0, numOfVertices - 1);
+    #pragma omp parallel for
     for (int i = 0; i < numOfVertices; ++i) {
         if (i <= pivot) {
             offspring1.colors[i] = parent1.colors[i];
@@ -123,6 +125,7 @@ void mutateOld(Specimen& s, int numOfColors, int numOfVertices) {  // Mutacja, m
 
 void correct(Specimen* population, int numOfColors, int numOfVertices, int populationSize)
 { //Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
+    #pragma omp parallel for
     for (int i = 0; i < populationSize; i++)
         if (population[i].numOfColors != numOfColors)
             for (int j = 0; j < numOfVertices; j++)
@@ -131,6 +134,7 @@ void correct(Specimen* population, int numOfColors, int numOfVertices, int popul
 }
 
 void initializePopulation(Specimen* population, int populationSize, int numOfVertices) {
+    #pragma omp parallel for
     for (int i = 0; i < populationSize; ++i) {
         population[i].colors = (int*)malloc(numOfVertices * sizeof(int));
         for (int j = 0; j < numOfVertices; ++j) {
@@ -149,7 +153,7 @@ int main()
     const int random_vertices = 30; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
     const int iterations = 1000; // Maksymalna liczba iteracji (generacji)
     int mutationChance = 50; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
-    int stopTime = 60; // Maksymalny czas działania
+    int stopTime = 60; // Maksymalny czas działania w sekundach
     
     random_device random_generator; // generator do losowania liczb
     int numOfVertices; // ilość wierzchołków
@@ -157,6 +161,7 @@ int main()
     sourceFile >> numOfVertices;
     //const int random_vertices = numOfVertices/10; // alt
     int** adjacencyMatrix = new int* [numOfVertices];
+    #pragma omp parallel for
     for (int i = 0; i < numOfVertices; i++)
         adjacencyMatrix[i] = new int[numOfVertices] {}; // macierz adjacencji
     int a, b; // para wierzchołków
@@ -171,6 +176,7 @@ int main()
     Specimen* population = (Specimen*)malloc(populationSize * sizeof(Specimen)); // przydzielamy pamięć dla populacji
     initializePopulation(population, populationSize, numOfVertices);
 
+    #pragma omp parallel for
     for (int i = 0; i < populationSize; i++) {
         calculateFitness(numOfVertices, adjacencyMatrix, population[i]); // sprawdzanie jakości rozwiązania naiwnego
     }
@@ -194,6 +200,7 @@ int main()
         initializePopulation(newPopulation, populationSize, numOfVertices); // przydzielamy pamięć
 
         // Turnieje i krzyżowanie (wybór nowej populacji)
+        #pragma omp parallel for
         for (int i = 0; i < populationSize; i+=2) {
             Specimen parent1 = tournamentSelection(population, populationSize);
             Specimen parent2 = tournamentSelection(population, populationSize);
@@ -207,22 +214,26 @@ int main()
         }
 
         // MUTACJE
+        #pragma omp parallel for
         for (int i = 0; i < populationSize; i++) {
             if (randomNumber(0, 100) < mutationChance) {
                 mutateOld(newPopulation[i], numOfColors, numOfVertices); //mutacja przez zmienienie osobnika 
             }
         }
 
+        #pragma omp parallel for
         for (int i = 0; i < populationSize; i++) {
             calculateFitness(numOfVertices, adjacencyMatrix, newPopulation[i]); // sprawdzanie jakości rozwiązania
         }
 
+        #pragma omp parallel for
         for (int i = 0; i < populationSize; ++i) { // kopiujemy nową populację w miejsce starej
             memcpy(population[i].colors, newPopulation[i].colors, numOfVertices * sizeof(int));
             population[i].numOfColors = newPopulation[i].numOfColors;
             population[i].numOfConflicts = newPopulation[i].numOfConflicts;
         }
 
+        #pragma omp parallel for
         for (int i = 0; i < populationSize; ++i) { // zwalnianie pamięci
             free(newPopulation[i].colors);
         }
