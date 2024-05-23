@@ -7,10 +7,7 @@
 #include <chrono>
 using namespace std;
 
-#define inFile "gc500.txt" // Plik wejściowy
-//nazwy plików: le450_5a.txt  gc500.txt  gc1000.txt  miles250.txt  queen6.txt  myciel7.txt  le450_25a.txt queen13.txt
-
-class Specimen {
+class Specimen { // klasa osobnika (pokolorowania grafu)
 public:
     vector<int> colors;
     set<int> conflict;
@@ -66,7 +63,7 @@ Specimen check_fitness(int numOfVertices, int** adjacencyMatrix, Specimen chromo
     return chromosomes;
 }
 
-vector<Specimen> tournament_selection(vector<Specimen> chromosomes, int population) // wybór nowej populacji metodą turniejową (starą zastępujemy wylosowaną)
+/*vector<Specimen> tournament_selection(vector<Specimen> chromosomes, int population) // wybór nowej populacji metodą turniejową (starą zastępujemy wylosowaną)
 {
     vector<Specimen> new_chromosomes; // deklaracja nowej populacji
     for (int i = 0; i < 2; i++) // robimy turniej dwa razy, gdyż po jednej iteracji otrzymamy 'populacja / 2' osobników
@@ -82,7 +79,7 @@ vector<Specimen> tournament_selection(vector<Specimen> chromosomes, int populati
         }
     }
     return new_chromosomes;
-}
+}*/
 
 float random_float(float max) // generowanie losowej liczby typu float z zakresu [0,max]
 {
@@ -90,7 +87,7 @@ float random_float(float max) // generowanie losowej liczby typu float z zakresu
     return rng;
 }
 
-vector<Specimen> RouletteWheel_Selection(vector<Specimen> chromosomes, int population)
+vector<Specimen> RouletteWheel_Selection(vector<Specimen> chromosomes, int population) // koło fortuny
 {
     vector<Specimen> new_chromosomes;
     float fitness_sum = 0;
@@ -113,14 +110,14 @@ vector<Specimen> RouletteWheel_Selection(vector<Specimen> chromosomes, int popul
     return new_chromosomes;
 }
 
-int randomNumber(int min, int max) {
+int randomNumber(int min, int max) { // zwraca losową liczbę naturalną z zakresu [min;max]
     random_device rd;
     mt19937 rng(rd());
     uniform_int_distribution<int> uni(min, max - 1);
     return uni(rng);
 }
 
-void crossover(Specimen& s1, Specimen& s2, int numOfVertices) {  // Krzyżowanie
+/*void crossover(Specimen& s1, Specimen& s2, int numOfVertices) {  // Krzyżowanie
     int pivot = randomNumber(1, numOfVertices - 1);  // losujemy pivot
     int* temp = new int[numOfVertices - pivot];  // tablica pomocnicza
     for (int i = numOfVertices - 1; i >= pivot; i--) {
@@ -134,9 +131,9 @@ void crossover(Specimen& s1, Specimen& s2, int numOfVertices) {  // Krzyżowanie
     for (int i = 0; i < numOfVertices - pivot; i++) { // wrzucamy część osobnika 1 z pomocniczej do osobnika 2
         s2.colors.push_back(temp[i]);
     }
-}
+}*/
 
-vector<Specimen> crossover2(vector<Specimen> chromosomes, int numOfVertices) //Krzyżowanie z dołaczaniem dzieci do starej populacji
+vector<Specimen> crossover2(vector<Specimen> chromosomes, int numOfVertices) //Krzyżowanie z dołączaniem dzieci do starej populacji
 {
     vector<Specimen> childs = chromosomes;
     for (int i = 0; i < childs.size(); i += 2)
@@ -160,19 +157,19 @@ vector<Specimen> crossover2(vector<Specimen> chromosomes, int numOfVertices) //K
     return chromosomes;
 }
 
-Specimen mutateNew(Specimen s, int numOfColors, int numOfVertices) {  // Mutacja, nowy osobnik
+/*Specimen mutateNew(Specimen s, int numOfColors, int numOfVertices) {  // Mutacja, nowy osobnik
     for (int i = 0; i < numOfVertices; i++) {
         s.colors[i] = randomNumber(0, numOfColors);
     }
     return s;
-}
+}*/
 
 void mutateOld(Specimen& s, int numOfColors, int numOfVertices) {  // Mutacja, modyfikacja starego osobnika
-    s.colors[randomNumber(0, numOfVertices)] = randomNumber(0, numOfColors);
+    s.colors[randomNumber(0, numOfVertices)] = randomNumber(0, numOfColors); // mutacja losowego wierzchołka
 }
 
 void mutateOld2(Specimen& s, int numOfColors) {  // Mutacja, modyfikacja starego osobnika
-    for (set<int>::iterator i = s.conflict.begin(); i != s.conflict.end(); i++)
+    for (set<int>::iterator i = s.conflict.begin(); i != s.conflict.end(); i++) // mutacja wierzchołków konfliktowych
     {
         s.colors[*i] = randomNumber(0, numOfColors);
     }
@@ -213,11 +210,15 @@ vector<Specimen> correct(vector<Specimen> chromosomes, int numOfColors, int numO
     return chromosomes;
 }
 
+#define inFile "queen6.txt" // Plik wejściowy
+//nazwy plików: le450_5a.txt  gc500.txt  gc1000.txt  miles250.txt  queen6.txt  myciel7.txt  le450_25a.txt queen13.txt
+#define printInterval 100 // co ile generacji wykonać print
+
 int main()
 {
     const int population = 80; // ustawienie całkowitej populacji
     const int random_vertices = 40; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
-    const int iterations = 20000; // Maksymalna liczba iteracji
+    const int iterations = 5000; // Maksymalna liczba iteracji (generacji)
     int mutationChance = 25; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
     int stopTime = 60*5; // Maksymalny czas działania
     
@@ -291,7 +292,7 @@ int main()
         numOfColors = solution.numOfColors - 1;
         chromosomes = correct(chromosomes, numOfColors, numOfVertices);
 
-        if (iteration % 10 == 0)
+        if (iteration % printInterval == 0)
             cout << endl << "Generacja: " << iteration << " Aktualnie poszukuje rozwiazania dla: " << numOfColors << " kolorow, aktualna liczba konfliktow: " << chromosomes[0].numOfConflicts;
 
         chromosomes = RouletteWheel_Selection(chromosomes, population); // Wybieranie nowej populacji
@@ -305,7 +306,7 @@ int main()
         chromosomes = crossover2(chromosomes, numOfVertices); //cross przez dodanie dzieci o populacji
 
         // MUTACJE
-        int curPopSize = chromosomes.size(); // Zapisujemy obecny rozmiar wektora do zmiennej aby się nie zapętiło
+        int curPopSize = chromosomes.size(); // Zapisujemy obecny rozmiar wektora do zmiennej aby się nie zapętliło
         for (int i = 0; i < curPopSize; i++) {
             if (randomNumber(0, 100) < mutationChance) {
                 //chromosomes.push_back(mutateNew(chromosomes[i], numOfColors, numOfVertices)); //mutacja poprzez dodanie wyniku do populacji

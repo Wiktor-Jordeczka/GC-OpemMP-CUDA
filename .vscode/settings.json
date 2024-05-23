@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "*.ejs": "html",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "vector": "cpp",
+        "random": "cpp"
     }
 }
