@@ -220,7 +220,7 @@ int main()
     const int population = 100; // ustawienie całkowitej populacji
     const int random_vertices = 30; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
     const int iterations = 20000; // Maksymalna liczba iteracji (generacji)
-    int mutationChance = 25; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
+    int mutationChance = 40; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
     int stopTime = 60*5; // Maksymalny czas działania
     
     random_device random_generator; // generator do losowania liczb
@@ -301,6 +301,10 @@ int main()
 
         // KRZYŻOWANIE
         chromosomes = crossover2(chromosomes, numOfVertices); //cross przez dodanie dzieci do populacji
+        /*int curPopSize = chromosomes.size(); // Zapisujemy obecny rozmiar wektora do zmiennej aby się nie zapętliło
+        for (int i = 0; i < chromosomes.size()-1; i = i+2) {
+            crossover(chromosomes[i], chromosomes[i + 1], numOfVertices);
+        }*/
 
         // MUTACJE
         int curPopSize = chromosomes.size(); // Zapisujemy obecny rozmiar wektora do zmiennej aby się nie zapętliło
