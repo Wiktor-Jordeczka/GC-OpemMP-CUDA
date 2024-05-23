@@ -336,13 +336,13 @@ int main()
     // Wypisanie osobników na końcu
     fstream output(outFile, ios::out);
     output << "osobnik w zmiennej solution: " << " konfliktow: " << solution.numOfConflicts << " kolorow: " << solution.numOfColors << endl;
-    for (int j = 0; j < solution.colors.size(); j++) {
+    for (int j = 0; j < numOfVertices; j++) {
         output << solution.colors[j] << " ";
     }
     output << endl << endl;
     for (int i = 0; i < chromosomes.size(); i++) {
         output << "Osobnik " << i << " konfliktow: " << chromosomes[i].numOfConflicts << " kolorow: " << chromosomes[i].numOfColors << endl;
-        for (int j = 0; j < chromosomes[i].colors.size(); j++) {
+        for (int j = 0; j < numOfVertices; j++) {
             output << chromosomes[i].colors[j] << " ";
         }
         output << endl;
