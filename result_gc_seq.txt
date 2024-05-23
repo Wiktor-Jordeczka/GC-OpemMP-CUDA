@@ -1,203 +1,203 @@
 osobnik w zmiennej solution:  konfliktow: 0 kolorow: 8
-6 1 5 2 3 7 2 0 4 1 6 5 7 5 2 3 4 1 3 6 1 7 2 0 5 4 3 0 1 6 0 2 6 4 7 3 
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 6 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
 
-Osobnik 0 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 1 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 2 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 3 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 4 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 5 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 6 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 7 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 8 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 9 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 10 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 11 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 12 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 13 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 14 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 5 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 15 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 16 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 17 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 18 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 19 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 20 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 21 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 22 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 23 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 24 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 25 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 26 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 27 konfliktow: 1 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 28 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 1 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 29 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 1 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 30 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 4 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 31 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 0 
-Osobnik 32 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 33 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 1 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 34 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 35 konfliktow: 2 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 36 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 6 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 37 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 4 1 2 6 3 0 
-Osobnik 38 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 6 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 39 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 40 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 5 3 6 1 0 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 41 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 1 3 0 5 2 5 1 2 6 3 0 
-Osobnik 42 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 2 1 2 6 3 0 
-Osobnik 43 konfliktow: 3 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 1 2 4 3 0 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 44 konfliktow: 3 kolorow: 7
-1 0 5 5 2 4 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 45 konfliktow: 3 kolorow: 7
-2 0 5 4 2 6 4 3 6 1 0 5 1 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 46 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 6 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 47 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 6 2 5 1 2 6 3 0 
-Osobnik 48 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 2 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 4 2 6 3 0 
-Osobnik 49 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 5 3 0 
-Osobnik 50 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 3 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 51 konfliktow: 4 kolorow: 7
-3 0 5 4 2 6 4 3 6 1 0 5 6 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 52 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 0 
-Osobnik 53 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 3 1 2 6 3 0 
-Osobnik 54 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 1 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 55 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 4 
-Osobnik 56 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 2 4 3 6 1 0 5 5 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 57 konfliktow: 4 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 1 5 2 5 1 2 6 3 0 
-Osobnik 58 konfliktow: 5 kolorow: 7
-1 0 1 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 0 
-Osobnik 59 konfliktow: 5 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 3 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 60 konfliktow: 5 kolorow: 7
-1 0 5 0 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 61 konfliktow: 5 kolorow: 7
-1 0 4 6 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 62 konfliktow: 5 kolorow: 7
-1 0 5 4 2 6 4 3 6 2 0 5 6 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 63 konfliktow: 5 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 4 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 64 konfliktow: 5 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 2 2 4 3 6 1 0 5 1 2 2 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 65 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 3 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 4 2 5 1 2 6 3 0 
-Osobnik 66 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 4 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 67 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 6 3 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 68 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 3 3 0 5 2 5 1 2 6 3 0 
-Osobnik 69 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 3 0 2 4 3 6 5 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 5 0 
-Osobnik 70 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 4 6 1 0 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 71 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 1 0 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 0 
-Osobnik 72 konfliktow: 6 kolorow: 7
-1 0 5 4 0 6 4 1 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 73 konfliktow: 6 kolorow: 7
-1 0 5 5 2 6 4 3 6 1 0 5 3 2 4 3 6 1 0 5 1 2 6 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 74 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 0 3 4 3 6 1 0 5 6 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 75 konfliktow: 6 kolorow: 7
-1 0 5 2 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 76 konfliktow: 6 kolorow: 7
-6 0 5 4 2 6 4 3 6 1 0 5 6 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 77 konfliktow: 6 kolorow: 7
-4 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 78 konfliktow: 6 kolorow: 7
-1 0 5 4 2 6 4 6 6 1 0 5 5 2 4 3 6 5 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 79 konfliktow: 7 kolorow: 7
-6 0 5 4 2 6 4 3 6 1 6 5 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 0 
-Osobnik 80 konfliktow: 7 kolorow: 7
-0 0 5 4 2 6 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 0 
-Osobnik 81 konfliktow: 7 kolorow: 7
-1 0 5 4 2 2 4 3 6 1 0 5 0 2 4 3 6 1 0 5 1 2 4 3 0 4 3 0 5 2 5 1 2 4 3 6 
-Osobnik 82 konfliktow: 7 kolorow: 7
-6 0 5 4 2 6 4 3 4 1 0 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 83 konfliktow: 7 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 1 5 4 3 6 1 0 5 1 2 0 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 84 konfliktow: 7 kolorow: 7
-5 0 5 4 2 6 2 3 6 1 0 5 1 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 6 6 3 0 
-Osobnik 85 konfliktow: 7 kolorow: 7
-1 0 5 4 4 2 4 3 6 1 2 5 4 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 86 konfliktow: 8 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 6 2 4 3 6 1 0 5 1 6 4 3 6 4 3 0 5 2 5 1 4 6 3 0 
-Osobnik 87 konfliktow: 8 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 0 5 3 2 4 0 6 1 1 5 1 2 4 3 6 4 3 0 5 2 2 1 2 6 3 0 
-Osobnik 88 konfliktow: 8 kolorow: 7
-1 0 5 4 3 6 4 3 6 1 0 6 0 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 5 3 0 
-Osobnik 89 konfliktow: 8 kolorow: 7
-1 0 5 3 2 6 1 3 6 2 0 5 3 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 90 konfliktow: 9 kolorow: 7
-1 0 5 2 2 2 4 3 6 1 0 5 5 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 4 3 6 
-Osobnik 91 konfliktow: 9 kolorow: 7
-1 0 5 5 2 6 4 3 6 1 0 5 6 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 6 5 1 3 6 3 0 
-Osobnik 92 konfliktow: 11 kolorow: 7
-1 0 5 4 2 2 4 3 6 1 0 3 5 2 4 3 6 1 0 5 1 2 4 3 4 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 93 konfliktow: 11 kolorow: 7
-1 0 5 4 2 6 4 2 6 1 0 5 6 2 3 3 6 1 0 5 1 2 2 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 94 konfliktow: 12 kolorow: 7
-1 0 5 4 5 4 4 4 6 1 0 5 3 2 4 3 0 1 0 5 1 2 4 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 95 konfliktow: 12 kolorow: 7
-1 0 5 4 3 6 3 3 6 1 3 5 2 2 4 3 6 1 0 5 1 2 4 3 6 4 3 0 5 2 5 6 2 6 3 0 
+Osobnik 0 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 1 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 2 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 3 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 4 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 5 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 6 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 7 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 8 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 9 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 10 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 0 2 1 0 3 4 2 6 5 
+Osobnik 11 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 12 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 13 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 14 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 15 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 16 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 17 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 18 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 19 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 20 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 21 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 22 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 23 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 24 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 25 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 0 2 1 0 3 4 2 6 5 
+Osobnik 26 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 27 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 28 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 29 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 30 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 31 konfliktow: 8 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 32 konfliktow: 9 kolorow: 7
+3 1 2 4 2 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 33 konfliktow: 9 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 3 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 34 konfliktow: 9 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 1 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 35 konfliktow: 9 kolorow: 7
+3 1 2 4 6 0 3 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 36 konfliktow: 9 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 1 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 37 konfliktow: 9 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 4 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 38 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 6 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 39 konfliktow: 10 kolorow: 7
+3 6 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 40 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 6 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 41 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 2 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 42 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 3 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 43 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 6 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 44 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 6 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 45 konfliktow: 10 kolorow: 7
+3 0 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 46 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 3 5 
+Osobnik 47 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 2 0 3 4 2 6 5 
+Osobnik 48 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 1 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 49 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 6 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 50 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 6 2 1 0 3 4 2 6 5 
+Osobnik 51 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 2 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 52 konfliktow: 10 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 5 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 53 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 0 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 54 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 1 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 55 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 5 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 56 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 0 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 57 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 2 2 1 0 3 4 6 6 5 
+Osobnik 58 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 1 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 59 konfliktow: 11 kolorow: 7
+3 1 2 4 6 4 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 60 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 2 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 61 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 6 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 62 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 1 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 63 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 3 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 64 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 3 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 6 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 65 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 1 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 66 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 4 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 67 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 6 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 5 5 
+Osobnik 68 konfliktow: 11 kolorow: 7
+3 1 0 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 69 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 4 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 70 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 5 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 71 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 4 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 72 konfliktow: 11 kolorow: 7
+6 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 73 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 4 1 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 74 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 2 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 75 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 0 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 76 konfliktow: 11 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 0 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 77 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 5 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 78 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 3 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 79 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 6 0 2 5 1 4 6 3 5 4 3 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 80 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 5 5 2 1 0 3 4 2 6 5 
+Osobnik 81 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 4 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 82 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 5 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 83 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 0 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 84 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 5 2 6 0 5 1 3 4 4 4 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 85 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 4 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 86 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 0 5 1 3 0 2 6 3 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 87 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 5 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 5 6 5 
+Osobnik 88 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 6 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 89 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 4 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 0 5 
+Osobnik 90 konfliktow: 12 kolorow: 7
+3 1 2 6 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 3 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 91 konfliktow: 12 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 2 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 92 konfliktow: 13 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 6 3 4 4 5 1 3 6 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 93 konfliktow: 13 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 2 6 0 3 6 2 1 0 3 4 2 6 5 
+Osobnik 94 konfliktow: 13 kolorow: 7
+3 1 2 4 3 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 6 2 1 0 3 4 2 6 5 
+Osobnik 95 konfliktow: 14 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 0 3 4 2 5 1 0 0 0 5 1 4 6 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
 Osobnik 96 konfliktow: 14 kolorow: 7
-1 0 1 5 2 6 4 5 5 1 0 5 6 2 4 3 2 1 0 5 1 2 6 3 6 4 3 0 5 2 5 1 2 6 3 0 
-Osobnik 97 konfliktow: 15 kolorow: 7
-4 0 5 4 2 3 6 3 6 1 0 5 2 3 4 3 0 1 1 5 1 2 4 0 6 4 3 0 5 2 5 1 2 5 3 0 
-Osobnik 98 konfliktow: 17 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 4 0 1 2 4 3 6 1 0 4 1 2 4 3 6 6 3 1 5 2 5 1 2 6 2 0 
-Osobnik 99 konfliktow: 21 kolorow: 7
-1 0 5 4 2 6 4 3 6 1 4 5 2 2 4 3 6 6 0 0 1 2 4 3 6 6 3 3 5 6 5 1 3 6 3 0 
+3 1 2 4 6 3 1 2 6 0 6 1 3 4 4 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 3 0 3 5 2 1 0 3 4 2 6 5 
+Osobnik 97 konfliktow: 14 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 3 4 6 5 1 0 3 2 5 1 4 6 3 5 4 6 0 3 4 2 1 0 3 4 2 6 5 
+Osobnik 98 konfliktow: 15 kolorow: 7
+3 1 2 4 6 0 1 2 6 0 5 1 3 4 4 5 1 3 0 2 6 6 5 4 2 5 1 0 0 2 5 1 4 3 3 5 4 6 0 3 1 2 1 0 3 4 2 6 5 
+Osobnik 99 konfliktow: 15 kolorow: 7
+3 1 2 4 6 0 1 0 6 0 5 1 3 4 1 5 1 3 0 2 6 6 3 4 2 5 1 0 0 2 5 1 4 6 3 5 4 6 0 3 4 2 1 1 3 4 2 6 5 
