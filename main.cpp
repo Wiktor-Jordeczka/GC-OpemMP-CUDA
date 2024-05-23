@@ -211,14 +211,15 @@ vector<Specimen> correct(vector<Specimen> chromosomes, int numOfColors, int numO
 }
 
 #define inFile "queen6.txt" // Plik wejściowy
+#define outFile "result_gc_seq.txt"
 //nazwy plików: le450_5a.txt  gc500.txt  gc1000.txt  miles250.txt  queen6.txt  myciel7.txt  le450_25a.txt queen13.txt
 #define printInterval 100 // co ile generacji wykonać print
 
 int main()
 {
-    const int population = 80; // ustawienie całkowitej populacji
-    const int random_vertices = 40; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
-    const int iterations = 5000; // Maksymalna liczba iteracji (generacji)
+    const int population = 100; // ustawienie całkowitej populacji
+    const int random_vertices = 30; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
+    const int iterations = 20000; // Maksymalna liczba iteracji (generacji)
     int mutationChance = 25; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
     int stopTime = 60*5; // Maksymalny czas działania
     
@@ -299,23 +300,17 @@ int main()
         //chromosomes = tournament_selection(chromosomes); // alt
 
         // KRZYŻOWANIE
-        
-        //for (int i = 0; i < chromosomes.size(); i += 2) {
-        //    crossover(chromosomes[i], chromosomes[i + 1], numOfVertices); // alt
-        //}
-        chromosomes = crossover2(chromosomes, numOfVertices); //cross przez dodanie dzieci o populacji
+        chromosomes = crossover2(chromosomes, numOfVertices); //cross przez dodanie dzieci do populacji
 
         // MUTACJE
         int curPopSize = chromosomes.size(); // Zapisujemy obecny rozmiar wektora do zmiennej aby się nie zapętliło
         for (int i = 0; i < curPopSize; i++) {
             if (randomNumber(0, 100) < mutationChance) {
-                //chromosomes.push_back(mutateNew(chromosomes[i], numOfColors, numOfVertices)); //mutacja poprzez dodanie wyniku do populacji
                 mutateOld2(chromosomes[i], numOfColors); //mutacja przez zmienienie osobnika 
             }
         }
         for (int i = 0; i < curPopSize; i++) {
             if (randomNumber(0, 100) < mutationChance) {
-                //chromosomes.push_back(mutateNew(chromosomes[i], numOfColors, numOfVertices)); //mutacja poprzez dodanie wyniku do populacji
                 mutateOld(chromosomes[i], numOfColors, numOfVertices); //mutacja przez zmienienie osobnika 
             }
         }
@@ -334,19 +329,19 @@ int main()
         stop = chrono::steady_clock::now();
     }
 
-
     // Wypisanie osobników na końcu
-    cout << endl;
-    for (int i = 0; i < chromosomes.size(); i++) {
-        cout << "Osobnik " << i << " konfliktow: " << chromosomes[i].numOfConflicts << " kolorow: " << chromosomes[i].numOfColors << endl;
-        for (int j = 0; j < chromosomes[i].colors.size(); j++) {
-            cout << chromosomes[i].colors[j] << " ";
-        }
-        cout << endl;
-    }
-    cout << endl << "osobnik w zmiennej solution: " << " konfliktow: " << solution.numOfConflicts << " kolorow: " << solution.numOfColors << endl;
+    fstream output(outFile, ios::out);
+    output << "osobnik w zmiennej solution: " << " konfliktow: " << solution.numOfConflicts << " kolorow: " << solution.numOfColors << endl;
     for (int j = 0; j < solution.colors.size(); j++) {
-        cout << solution.colors[j] << " ";
+        output << solution.colors[j] << " ";
     }
-    cout << endl;
+    output << endl << endl;
+    for (int i = 0; i < chromosomes.size(); i++) {
+        output << "Osobnik " << i << " konfliktow: " << chromosomes[i].numOfConflicts << " kolorow: " << chromosomes[i].numOfColors << endl;
+        for (int j = 0; j < chromosomes[i].colors.size(); j++) {
+            output << chromosomes[i].colors[j] << " ";
+        }
+        output << endl;
+    }
+    cout << endl << "Czas w sekuncach: " << chrono::duration_cast<chrono::seconds>(stop-start).count() << endl;
 }
