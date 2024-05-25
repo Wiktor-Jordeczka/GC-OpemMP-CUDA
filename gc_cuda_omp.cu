@@ -35,11 +35,9 @@ __global__ void cudaCalculateFitnessKernel(int numOfVertices, int* d_adjacencyMa
         {
             if (d_adjacencyMatrix[i * numOfVertices + j] == 1 && d_colors[idx * numOfVertices + i] == d_colors[idx * numOfVertices + j]) // szukamy wierzchołka sąsiedniego z tym samym kolorem
             {
-                //specimen.numOfConflicts++;
                 d_conflictNum[idx]++;
             }
         }
-        //colorSet[specimen.colors[i]] = true;
         colorSet[d_colors[idx * numOfVertices + i]] = true; // kolor użyty
     }
     
@@ -93,7 +91,7 @@ void cudaCalculateFitness(int numOfVertices, int* d_adjacencyMatrix, Specimen* p
     int* h_conflictNum = new int[populationSize]; // spłaszczone ilości konfliktów osobników
 
     // spłaszczamy tablicę struktów i podtablice kolorów
-    //#pragma omp parallel for collapse(2)
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, h_colors, population)
     for (int i = 0; i < populationSize; i++) {
         for (int j = 0; j < numOfVertices; j++) {
             h_colors[(i * numOfVertices + j)] = population[i].colors[j];
@@ -121,7 +119,7 @@ void cudaCalculateFitness(int numOfVertices, int* d_adjacencyMatrix, Specimen* p
     cudaMemcpy(h_colors, d_colors, colorsSize, cudaMemcpyDeviceToHost);
 
     // kopiujemy spłaszczone dane do populacji
-    //#pragma omp parallel for collapse(2)
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, h_colors, population)
     for (int i = 0; i < populationSize; i++) {
         for (int j = 0; j < numOfVertices; j++) {
             population[i].colors[j] = h_colors[(i * numOfVertices + j)];
@@ -146,10 +144,6 @@ int randomNumber(int min, int max) { // zwraca losową liczbę naturalną z zakr
     return uni(rng);
 }
 
-int rng(int min, int max) { // if cuda breaks
-    return min + rand() % ((max + 1) - min);
-}
-
 Specimen tournamentSelection(Specimen* population, int populationSize) { // turniej
     int tournamentSize = 3;
     Specimen chosenSpecimen = population[randomNumber(0, populationSize - 1)];
@@ -165,6 +159,7 @@ Specimen tournamentSelection(Specimen* population, int populationSize) { // turn
 // Krzyżowanie
 void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Specimen& offspring2, int numOfVertices) {
     int pivot = randomNumber(0, numOfVertices - 1);
+    #pragma omp parallel for default(none) shared(pivot, parent1, parent2, offspring1, offspring2, numOfVertices)
     for (int i = 0; i < numOfVertices; ++i) {
         if (i <= pivot) {
             offspring1.colors[i] = parent1.colors[i];
@@ -183,6 +178,7 @@ void mutateOld(Specimen& s, int numOfColors, int numOfVertices) {  // Mutacja, m
 
 void correct(Specimen* population, int numOfColors, int numOfVertices, int populationSize)
 { //Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, numOfColors, population)
     for (int i = 0; i < populationSize; i++)
         if (population[i].numOfColors != numOfColors)
             for (int j = 0; j < numOfVertices; j++)
@@ -191,6 +187,7 @@ void correct(Specimen* population, int numOfColors, int numOfVertices, int popul
 }
 
 void initializePopulation(Specimen* population, int populationSize, int numOfVertices) {
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population)
     for (int i = 0; i < populationSize; ++i) {
         population[i].colors = (int*)malloc(numOfVertices * sizeof(int));
         for (int j = 0; j < numOfVertices; ++j) {
@@ -200,8 +197,8 @@ void initializePopulation(Specimen* population, int populationSize, int numOfVer
 }
 
 #define inFile "queen7_7.txt" // Plik wejściowy
-#define outFile "result_gc_cuda.txt"
-#define printInterval 1000 // co ile generacji wykonać print
+#define outFile "result_gc_cuda_omp.txt"
+#define printInterval 100 // co ile generacji wykonać print
 
 int main()
 {
@@ -216,6 +213,7 @@ int main()
     ifstream sourceFile(inFile); // plik wejściowy
     sourceFile >> numOfVertices;
     int** adjacencyMatrix = new int* [numOfVertices];
+    #pragma omp parallel for default(none) shared(adjacencyMatrix, numOfVertices)
     for (int i = 0; i < numOfVertices; i++)
         adjacencyMatrix[i] = new int[numOfVertices] {}; // macierz adjacencji
     int a, b; // para wierzchołków
@@ -226,6 +224,7 @@ int main()
     sourceFile.close();
 
     int* h_adjacencyMatrix = new int[numOfVertices * numOfVertices]; // spłaszczona macierz sąsiedztwa
+    #pragma omp parallel for default(none) shared(adjacencyMatrix, numOfVertices, h_adjacencyMatrix)
     for (int i = 0; i < numOfVertices; i++) {
         for (int j = 0; j < numOfVertices; j++) {
             h_adjacencyMatrix[(i * numOfVertices + j)] = adjacencyMatrix[i][j];
@@ -262,6 +261,7 @@ int main()
         initializePopulation(newPopulation, populationSize, numOfVertices); // przydzielamy pamięć
 
         // Turnieje i krzyżowanie (wybór nowej populacji)
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, newPopulation)
         for (int i = 0; i < populationSize; i+=2) {
             Specimen parent1 = tournamentSelection(population, populationSize);
             Specimen parent2 = tournamentSelection(population, populationSize);
@@ -275,6 +275,7 @@ int main()
         }
 
         // MUTACJE
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, numOfColors, mutationChance, newPopulation)
         for (int i = 0; i < populationSize; i++) {
             if (randomNumber(0, 100) < mutationChance) {
                 mutateOld(newPopulation[i], numOfColors, numOfVertices); //mutacja przez zmienienie osobnika 
@@ -283,12 +284,14 @@ int main()
 
         cudaCalculateFitness(numOfVertices, d_adjacencyMatrix, newPopulation, populationSize);
 
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, newPopulation)
         for (int i = 0; i < populationSize; ++i) { // kopiujemy nową populację w miejsce starej
             memcpy(population[i].colors, newPopulation[i].colors, numOfVertices * sizeof(int));
             population[i].numOfColors = newPopulation[i].numOfColors;
             population[i].numOfConflicts = newPopulation[i].numOfConflicts;
         }
 
+        #pragma omp parallel for default(none) shared(populationSize, newPopulation)
         for (int i = 0; i < populationSize; ++i) { // zwalnianie pamięci
             free(newPopulation[i].colors);
         }
@@ -318,6 +321,7 @@ int main()
     cout << endl << "Czas w sekuncach: " << chrono::duration_cast<chrono::seconds>(stop-start).count() << endl;
     // zwalniamy pamięć
     delete[] population;
+    #pragma omp parallel for default(none) shared(adjacencyMatrix, numOfVertices)
     for (int i = 0; i < numOfVertices; i++)
         delete[] adjacencyMatrix[i];
     delete[] adjacencyMatrix;
