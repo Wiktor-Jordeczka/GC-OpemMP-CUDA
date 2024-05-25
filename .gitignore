@@ -1,1 +1,3 @@
 *.exe
+result_gc_cuda_omp.txt
+*.txt
