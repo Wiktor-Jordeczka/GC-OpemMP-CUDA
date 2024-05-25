@@ -6,6 +6,7 @@
 #include <set>
 #include <cstring>
 #include <chrono>
+#include <omp.h>
 #include <cuda_runtime.h>
 using namespace std;
 
