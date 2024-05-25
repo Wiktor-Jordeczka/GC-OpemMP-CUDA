@@ -79,9 +79,7 @@ void calculateFitness(int numOfVertices, int** adjacencyMatrix, Specimen &specim
     return;
 }
 
-int randomNumber(int min, int max) { // zwraca losową liczbę naturalną z zakresu [min;max]
-    random_device rd;
-    mt19937 rng(rd());
+int randomNumber(int min, int max, mt19937& rng) { // zwraca losową liczbę naturalną z zakresu [min;max]
     uniform_int_distribution<int> uni(min, max - 1);
     return uni(rng);
 }
@@ -90,11 +88,11 @@ int rng(int min, int max) { // if cuda breaks
     return min + rand() % ((max + 1) - min);
 }
 
-Specimen tournamentSelection(Specimen* population, int populationSize) { // turniej
+Specimen tournamentSelection(Specimen* population, int populationSize, mt19937& rng) { // turniej
     int tournamentSize = 3;
-    Specimen chosenSpecimen = population[randomNumber(0, populationSize - 1)];
+    Specimen chosenSpecimen = population[randomNumber(0, populationSize - 1, rng)];
     for (int i = 1; i < tournamentSize; ++i) {
-        Specimen candidate = population[randomNumber(0, populationSize - 1)];
+        Specimen candidate = population[randomNumber(0, populationSize - 1, rng)];
         if (candidate < chosenSpecimen) {
             chosenSpecimen = candidate;
         }
@@ -103,8 +101,8 @@ Specimen tournamentSelection(Specimen* population, int populationSize) { // turn
 }
 
 // Krzyżowanie
-void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Specimen& offspring2, int numOfVertices) {
-    int pivot = randomNumber(0, numOfVertices - 1);
+void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Specimen& offspring2, int numOfVertices, mt19937& rng) {
+    int pivot = randomNumber(0, numOfVertices - 1, rng);
     for (int i = 0; i < numOfVertices; ++i) {
         if (i <= pivot) {
             offspring1.colors[i] = parent1.colors[i];
@@ -117,45 +115,44 @@ void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Speci
     }
 }
 
-void mutateOld(Specimen& s, int numOfColors, int numOfVertices) {  // Mutacja, modyfikacja starego osobnika
-    s.colors[randomNumber(0, numOfVertices)] = randomNumber(0, numOfColors); // mutacja losowego wierzchołka
+void mutateOld(Specimen& s, int numOfColors, int numOfVertices, mt19937& rng) {  // Mutacja, modyfikacja starego osobnika
+    s.colors[randomNumber(0, numOfVertices, rng)] = randomNumber(0, numOfColors, rng); // mutacja losowego wierzchołka
 }
 
-void correct(Specimen* population, int numOfColors, int numOfVertices, int populationSize)
+void correct(Specimen* population, int numOfColors, int numOfVertices, int populationSize, mt19937& rng)
 { //Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
     for (int i = 0; i < populationSize; i++)
         if (population[i].numOfColors != numOfColors)
             for (int j = 0; j < numOfVertices; j++)
                 if (population[i].colors[j] >= numOfColors - 1)
-                    population[i].colors[j] = randomNumber(0, numOfColors - 2);
+                    population[i].colors[j] = randomNumber(0, numOfColors - 2, rng);
 }
 
-void initializePopulation(Specimen* population, int populationSize, int numOfVertices) {
+void initializePopulation(Specimen* population, int populationSize, int numOfVertices, mt19937& rng) {
     for (int i = 0; i < populationSize; ++i) {
         population[i].colors = (int*)malloc(numOfVertices * sizeof(int));
         for (int j = 0; j < numOfVertices; ++j) {
-            population[i].colors[j] = randomNumber(0, numOfVertices - 1);
+            population[i].colors[j] = randomNumber(0, numOfVertices - 1, rng);
         }
     }
 }
 
 #define inFile "queen7_7.txt" // Plik wejściowy
 #define outFile "result_gc_seq.txt"
-#define printInterval 10 // co ile generacji wykonać print
+#define printInterval 100 // co ile generacji wykonać print
 
 int main()
 {
-    const int populationSize = 10000; // ustawienie całkowitej populacji
-    const int random_vertices = 30; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
+    const int populationSize = 1000; // ustawienie całkowitej populacji
     const int iterations = 1000; // Maksymalna liczba iteracji (generacji)
     int mutationChance = 50; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
     int stopTime = 60; // Maksymalny czas działania
     
-    random_device random_generator; // generator do losowania liczb
+    random_device rd; // losowy seed
+    mt19937 rng(rd()); // generator do losoania liczb
     int numOfVertices; // ilość wierzchołków
     ifstream sourceFile(inFile); // plik wejściowy
     sourceFile >> numOfVertices;
-    //const int random_vertices = numOfVertices/10; // alt
     int** adjacencyMatrix = new int* [numOfVertices];
     for (int i = 0; i < numOfVertices; i++)
         adjacencyMatrix[i] = new int[numOfVertices] {}; // macierz adjacencji
@@ -169,7 +166,7 @@ int main()
     bool* colorsUsed = new bool [numOfVertices] {}; // pomocnicza
 
     Specimen* population = (Specimen*)malloc(populationSize * sizeof(Specimen)); // przydzielamy pamięć dla populacji
-    initializePopulation(population, populationSize, numOfVertices);
+    initializePopulation(population, populationSize, numOfVertices, rng);
 
     for (int i = 0; i < populationSize; i++) {
         calculateFitness(numOfVertices, adjacencyMatrix, population[i]); // sprawdzanie jakości rozwiązania naiwnego
@@ -185,31 +182,31 @@ int main()
     while (iteration < iterations && chrono::duration_cast<chrono::seconds>(stop-start).count() < stopTime) {
         //Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
         numOfColors = solution.numOfColors - 1;
-        correct(population, numOfColors, numOfVertices, populationSize); // korekta kolorów
+        correct(population, numOfColors, numOfVertices, populationSize, rng); // korekta kolorów
 
         if (iteration % printInterval == 0) // print
             cout << endl << "Generacja: " << iteration << " Aktualnie poszukuje rozwiazania dla: " << numOfColors << " kolorow, aktualna liczba konfliktow: " << population[0].numOfConflicts;
 
         Specimen* newPopulation = (Specimen*)malloc(populationSize * sizeof(Specimen)); // Nowa populacja
-        initializePopulation(newPopulation, populationSize, numOfVertices); // przydzielamy pamięć
+        initializePopulation(newPopulation, populationSize, numOfVertices, rng); // przydzielamy pamięć
 
         // Turnieje i krzyżowanie (wybór nowej populacji)
         for (int i = 0; i < populationSize; i+=2) {
-            Specimen parent1 = tournamentSelection(population, populationSize);
-            Specimen parent2 = tournamentSelection(population, populationSize);
+            Specimen parent1 = tournamentSelection(population, populationSize, rng);
+            Specimen parent2 = tournamentSelection(population, populationSize, rng);
             Specimen offspring1;
             offspring1.colors = (int*)malloc(numOfVertices * sizeof(int));
             Specimen offspring2;
             offspring2.colors = (int*)malloc(numOfVertices * sizeof(int));
-            crossover(parent1, parent2, offspring1, offspring2, numOfVertices);
+            crossover(parent1, parent2, offspring1, offspring2, numOfVertices, rng);
             newPopulation[i] = offspring1;
             newPopulation[i + 1] = offspring2;
         }
 
         // MUTACJE
         for (int i = 0; i < populationSize; i++) {
-            if (randomNumber(0, 100) < mutationChance) {
-                mutateOld(newPopulation[i], numOfColors, numOfVertices); //mutacja przez zmienienie osobnika 
+            if (randomNumber(0, 100, rng) < mutationChance) {
+                mutateOld(newPopulation[i], numOfColors, numOfVertices, rng); //mutacja przez zmienienie osobnika 
             }
         }
 
