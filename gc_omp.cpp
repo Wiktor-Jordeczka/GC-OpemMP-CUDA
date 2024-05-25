@@ -1,11 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <random>
 #include <algorithm>
 #include <set>
 #include <cstring>
 #include <chrono>
-#include "gc_seq.h"
+#include <omp.h>
+#include "gc_omp.h"
 using namespace std;
 
 // Wartości domyślne zdefiniowane w headerze, można zmienić wywołując z parametrami
@@ -103,7 +105,7 @@ int randomNumber(int min, int max, mt19937& rng) {
 
 // turniej
 Specimen tournamentSelection(Specimen* population, int populationSize, mt19937& rng) {
-    int tournamentSize = 5;
+    int tournamentSize = 3;
     Specimen chosenSpecimen = population[randomNumber(0, populationSize - 1, rng)];
     for (int i = 1; i < tournamentSize; ++i) {
         Specimen candidate = population[randomNumber(0, populationSize - 1, rng)];
@@ -117,6 +119,7 @@ Specimen tournamentSelection(Specimen* population, int populationSize, mt19937& 
 // Krzyżowanie osobników - jednopunktowe
 void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Specimen& offspring2, int numOfVertices, mt19937& rng) {
     int pivot = randomNumber(0, numOfVertices - 1, rng);
+    #pragma omp parallel for default(none) shared(pivot, parent1, parent2, offspring1, offspring2, numOfVertices, rng)
     for (int i = 0; i < numOfVertices; ++i) {
         if (i <= pivot) {
             offspring1.colors[i] = parent1.colors[i];
@@ -131,11 +134,12 @@ void crossover(Specimen& parent1, Specimen& parent2, Specimen& offspring1, Speci
 
 // mutacja losowego wierzchołka
 void mutateOld(Specimen& s, int numOfColors, int numOfVertices, mt19937& rng) {
-    s.colors[randomNumber(0, numOfVertices, rng)] = randomNumber(0, numOfColors, rng);
+    s.colors[randomNumber(0, numOfVertices, rng)] = randomNumber(0, numOfColors, rng); 
 }
 
-//Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
+// Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
 void correct(Specimen* population, int numOfColors, int numOfVertices, int populationSize, mt19937& rng){
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, numOfColors, population, rng)
     for (int i = 0; i < populationSize; i++)
         if (population[i].numOfColors != numOfColors)
             for (int j = 0; j < numOfVertices; j++)
@@ -145,6 +149,7 @@ void correct(Specimen* population, int numOfColors, int numOfVertices, int popul
 
 // inicjalizacja populacji
 void initializePopulation(Specimen* population, int populationSize, int numOfVertices, mt19937& rng) {
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, rng)
     for (int i = 0; i < populationSize; ++i) {
         population[i].colors = (int*)malloc(numOfVertices * sizeof(int));
         for (int j = 0; j < numOfVertices; ++j) {
@@ -202,7 +207,7 @@ int main(int argc, char *argv[]){
     mt19937 rng(seed); // generator do losowania liczb
     int numOfVertices; // ilość wierzchołków
     ifstream sourceFile(inFile); // plik wejściowy
-
+    
     // wczytujemy graf z pliku
     sourceFile >> numOfVertices;
     int** adjacencyMatrix = new int* [numOfVertices]; // macierz sąsiedztwa
@@ -219,6 +224,7 @@ int main(int argc, char *argv[]){
     Specimen* population = (Specimen*)malloc(populationSize * sizeof(Specimen));
     initializePopulation(population, populationSize, numOfVertices, rng);
 
+    #pragma omp parallel for default(none) shared(populationSize, numOfVertices, adjacencyMatrix, population)
     for (int i = 0; i < populationSize; i++) { // sprawdzanie jakości rozwiązania naiwnego
         calculateFitness(numOfVertices, adjacencyMatrix, population[i]); 
     }
@@ -232,7 +238,7 @@ int main(int argc, char *argv[]){
 
     // główna pętla algorytmu
     while (iteration < iterations && chrono::duration_cast<chrono::seconds>(stop-start).count() < stopTime) { // zatrzymanie po czasie
-        
+
         //Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
         numOfColors = solution.numOfColors - 1;
         correct(population, numOfColors, numOfVertices, populationSize, rng); // korekta kolorów
@@ -241,6 +247,7 @@ int main(int argc, char *argv[]){
             cout << endl << "Generacja: " << iteration << " Aktualnie poszukuje rozwiazania dla: " << numOfColors << " kolorow, aktualna liczba konfliktow: " << population[0].numOfConflicts;
 
         // Turnieje i krzyżowanie (wybór nowej populacji)
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, newPopulation, rng)
         for (int i = 0; i < populationSize; i+=2) {
             Specimen parent1 = tournamentSelection(population, populationSize, rng);
             Specimen parent2 = tournamentSelection(population, populationSize, rng);
@@ -254,33 +261,38 @@ int main(int argc, char *argv[]){
         }
 
         // Mutacje
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, numOfColors, mutationChance, newPopulation, rng)
         for (int i = 0; i < populationSize; i++) {
             if (randomNumber(0, 100, rng) < mutationChance) {
-                mutateOld(newPopulation[i], numOfColors, numOfVertices, rng); //mutacja przez zmienienie osobnika 
+                mutateOld(newPopulation[i], numOfColors, numOfVertices, rng);
             }
         }
 
         // obliczamy jakość osobników w populacji
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, adjacencyMatrix, newPopulation)
         for (int i = 0; i < populationSize; i++) {
             calculateFitness(numOfVertices, adjacencyMatrix, newPopulation[i]); // sprawdzanie jakości rozwiązania
         }
 
-        for (int i = 0; i < populationSize; ++i) { // kopiujemy nową populację w miejsce starej
+        // kopiujemy nową populację w miejsce starej
+        #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, newPopulation)
+        for (int i = 0; i < populationSize; ++i) {
             memcpy(population[i].colors, newPopulation[i].colors, numOfVertices * sizeof(int));
             population[i].numOfColors = newPopulation[i].numOfColors;
             population[i].numOfConflicts = newPopulation[i].numOfConflicts;
         }
         
         sort(population, population+populationSize); // sortujemy tablicę tak, że najlepsze rozwiązanie ma indeks 0, a najgorsze 'populacja - 1'
-        
+
         // zapamiętujemy rozwiązanie, gdy znajdziemy kolorowanie bezkonfliktowe z mniejszą ilością kolorów
         if (solution.numOfColors > population[0].numOfColors && population[0].numOfConflicts == 0)
-            solution = Specimen(population[0]);
+            solution = Specimen(population[0]); 
         iteration++;
         stop = chrono::steady_clock::now();
     }
 
     // zwalnianie pamięci populacji tymczasowej
+    #pragma omp parallel for default(none) shared(populationSize, newPopulation)
     for (int i = 0; i < populationSize; ++i) { 
         free(newPopulation[i].colors);
     }
@@ -309,6 +321,7 @@ int main(int argc, char *argv[]){
 
     // zwalniamy pamięć populacji i macierzy
     delete[] population;
+    #pragma omp parallel for default(none) shared(adjacencyMatrix, numOfVertices)
     for (int i = 0; i < numOfVertices; i++)
         delete[] adjacencyMatrix[i];
     delete[] adjacencyMatrix;

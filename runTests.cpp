@@ -4,8 +4,8 @@
 using namespace std;
 
 int main(){
-    for(int i=200; i<=2000; i+= 200){
-        string executable = "gc_cuda_omp.exe";
+    for(int i=1000; i<=10000; i+= 1000){
+        string executable = "gc_omp.exe";
         string inFile = "input/queen7_7.txt"; // -i (path); plik wejściowy
         string outFile = "output/result_gc_cuda_omp_"+to_string(i)+".txt"; // -o (path); plik wyjściowy
         string populationSize = to_string(i); // -p (int); rozmiar populacji

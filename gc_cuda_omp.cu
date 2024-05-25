@@ -214,6 +214,9 @@ void initializePopulation(Specimen* population, int populationSize, int numOfVer
 }
 
 int main(int argc, char *argv[]){
+    auto start = chrono::steady_clock::now(); // Timer
+    auto stop = chrono::steady_clock::now();
+
     // odczytanie i ustawienie parametrów
     int i = 0;
     while (i < argc) {
@@ -298,13 +301,11 @@ int main(int argc, char *argv[]){
 
     int iteration = 0; // iteracja
     int numOfColors = 0; // ilość kolorów jaką chcemy uzyskać
-    auto start = chrono::steady_clock::now(); // Timer
-    auto stop = chrono::steady_clock::now(); // zatrzymanie po czasie
     Specimen* newPopulation = (Specimen*)malloc(populationSize * sizeof(Specimen)); // Nowa populacja
     initializePopulation(newPopulation, populationSize, numOfVertices, rng); // przydzielamy pamięć
 
     // główna pętla algorytmu
-    while (iteration < iterations && chrono::duration_cast<chrono::seconds>(stop-start).count() < stopTime) {
+    while (iteration < iterations && chrono::duration_cast<chrono::seconds>(stop-start).count() < stopTime) { // zatrzymanie po czasie
 
         //Sprawdzamy akutalną liczbę kolorów najlepszego rozwiązania i usuwamy ich potencjalne nadwyżki u innych osobników
         numOfColors = solution.numOfColors - 1;
@@ -361,9 +362,11 @@ int main(int argc, char *argv[]){
         free(newPopulation[i].colors);
     }
     free(newPopulation);
+    stop = chrono::steady_clock::now(); // koniec mierzenia czasu
 
     // Zapisanie wyniku do pliku
     fstream output(outFile, ios::out);
+    output << "Czas w nanosekundach: " << (stop-start).count() << endl;
     output << "Czas w sekundach: " << chrono::duration_cast<chrono::seconds>(stop-start).count() << endl;
     output << "Osobnik w zmiennej solution: " << " konfliktow: " << solution.numOfConflicts << " kolorow: " << solution.numOfColors << endl;
     for (int j = 0; j < numOfVertices; j++) {

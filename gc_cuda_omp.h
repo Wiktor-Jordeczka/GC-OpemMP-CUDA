@@ -1,7 +1,7 @@
 #include <string>
 
-std::string inFile = "queen7_7.txt"; // -i (path); plik wejściowy
-std::string outFile = "result_gc_cuda_omp.txt"; // -o (path); plik wyjściowy
+std::string inFile = "input/queen7_7.txt"; // -i (path); plik wejściowy
+std::string outFile = "output/result_gc_cuda_omp.txt"; // -o (path); plik wyjściowy
 int populationSize = 1000; // -p (int); rozmiar populacji
 int iterations = 1000; // -l (int); maksymalna liczba iteracji (generacji)
 int mutationChance = 50; // -m (int); prawdopodobieństwo mutacji <0;100>
