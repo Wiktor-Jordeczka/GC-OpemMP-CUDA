@@ -141,11 +141,11 @@ void initializePopulation(Specimen* population, int populationSize, int numOfVer
 
 #define inFile "queen7_7.txt" // Plik wejściowy
 #define outFile "result_gc_seq.txt"
-#define printInterval 100 // co ile generacji wykonać print
+#define printInterval 10 // co ile generacji wykonać print
 
 int main()
 {
-    const int populationSize = 1000; // ustawienie całkowitej populacji
+    const int populationSize = 10000; // ustawienie całkowitej populacji
     const int random_vertices = 30; // ilość losowo pokolorowanych wierzchołków przy tworzeniu populacji
     const int iterations = 1000; // Maksymalna liczba iteracji (generacji)
     int mutationChance = 50; // Tutaj wpisujemy prawdopodobieństwo mutacji <0;100>
