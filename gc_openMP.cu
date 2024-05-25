@@ -81,7 +81,7 @@ void calculateFitness(int numOfVertices, int** adjacencyMatrix, Specimen &specim
 }
 
 int randomNumber(int min, int max/*, mt19937 rng*/) { // zwraca losową liczbę naturalną z zakresu [min;max]
-// TODO SEED W MAINE
+
     random_device rd;
     mt19937 rng(rd());
     uniform_int_distribution<int> uni(min, max - 1);
