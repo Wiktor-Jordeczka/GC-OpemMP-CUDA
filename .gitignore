@@ -1,1 +1,4 @@
 *.exe
+output
+*.exp
+*.lib
