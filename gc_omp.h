@@ -2,7 +2,7 @@
 #include <random>
 
 std::string inFile = "input/queen7_7.txt"; // -i (path); plik wejściowy
-std::string outFile = "output/result_gc_seq.txt"; // -o (path); plik wyjściowy
+std::string outFile = "output/result_gc_omp.txt"; // -o (path); plik wyjściowy
 int populationSize = 1000; // -p (int); rozmiar populacji
 int iterations = 1000; // -l (int); maksymalna liczba iteracji (generacji)
 int mutationChance = 50; // -m (int); prawdopodobieństwo mutacji <0;100>
