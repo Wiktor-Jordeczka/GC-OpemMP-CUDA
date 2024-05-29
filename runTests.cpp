@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     for(int i=1000; i<=10000; i+= 1000){
         string executable = "gc_omp.exe";
-        string inFile = "input/queen7_7.txt"; // -i (path); plik wejściowy
+        string inFile = "input/queen13.txt"; // -i (path); plik wejściowy
         string outFile = "output/result_gc_cuda_omp_"+to_string(i)+".txt"; // -o (path); plik wyjściowy
         string populationSize = to_string(i); // -p (int); rozmiar populacji
         string iterations = to_string(1000); // -l (int); maksymalna liczba iteracji (generacji)
