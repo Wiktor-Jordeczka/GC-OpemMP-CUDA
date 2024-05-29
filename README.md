@@ -1,6 +1,6 @@
 # Kolorowanie grafu z wykorzystaniem algorytmu genetycznego oraz techologii przetwarzania równoległego OpenMP i CUDA
 ## Opis programów i analiza wydajności
-
+[Exportowane z DokuWiki](DokuWikiExport.pdf)
 ## Opis Repozytorium
 Dostępne są pliki:
  - gc_seq z algorytmem sekwencyjnym
