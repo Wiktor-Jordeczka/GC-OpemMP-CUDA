@@ -317,15 +317,19 @@ int main(int argc, char *argv[]){
         // Turnieje i krzyżowanie (wybór nowej populacji)
         #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, newPopulation, rng)
         for (int i = 0; i < populationSize; i+=2) {
-            Specimen parent1 = tournamentSelection(population, populationSize, rng);
+            Specimen parent1 = tournamentSelection(population, populationSize, rng); // wybieramy rodziców z turniejów
             Specimen parent2 = tournamentSelection(population, populationSize, rng);
-            Specimen offspring1;
-            offspring1.colors = (int*)malloc(numOfVertices * sizeof(int));
-            Specimen offspring2;
-            offspring2.colors = (int*)malloc(numOfVertices * sizeof(int));
-            crossover(parent1, parent2, offspring1, offspring2, numOfVertices, rng);
-            newPopulation[i] = offspring1;
-            newPopulation[i + 1] = offspring2;
+            Specimen* offspring1 = new Specimen; // przydzielamy pamięć dla potomków
+            offspring1->colors = (int*)malloc(numOfVertices * sizeof(int));
+            Specimen* offspring2 = new Specimen;
+            offspring2->colors = (int*)malloc(numOfVertices * sizeof(int));
+            crossover(parent1, parent2, *offspring1, *offspring2, numOfVertices, rng); // krzyżujemy i otrzymujemy potomków
+            memcpy(newPopulation[i].colors, offspring1->colors, numOfVertices * sizeof(int)); // kopiujemy cechy potomków
+            memcpy(newPopulation[i + 1].colors, offspring2->colors, numOfVertices * sizeof(int));
+            free(offspring1->colors); // zwalniamy pamięć
+            free(offspring2->colors);
+            delete offspring1;
+            delete offspring2;
         }
 
         // Mutacje
@@ -356,6 +360,9 @@ int main(int argc, char *argv[]){
         stop = chrono::steady_clock::now();
     }
 
+    // zwalnianie pamięci GPU
+    cudaFree(d_adjacencyMatrix);
+
     // zwalnianie pamięci populacji tymczasowej
     #pragma omp parallel for default(none) shared(populationSize, newPopulation)
     for (int i = 0; i < populationSize; ++i) { 
@@ -385,7 +392,11 @@ int main(int argc, char *argv[]){
     }
 
     // zwalniamy pamięć populacji i macierzy
-    delete[] population;
+    #pragma omp parallel for default(none) shared(populationSize, population)
+    for (int i = 0; i < populationSize; ++i) { 
+        free(population[i].colors);
+    }
+    free(population);
     #pragma omp parallel for default(none) shared(adjacencyMatrix, numOfVertices)
     for (int i = 0; i < numOfVertices; i++)
         delete[] adjacencyMatrix[i];
