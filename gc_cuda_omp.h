@@ -10,3 +10,4 @@ bool verbose = false; // -v (int); czy wypisywać printy i dodatkowe dane wyjśc
 int printInterval = 100; // -v (int); co ile generacji wykonać print
 std::random_device rd; // losowy seed
 unsigned int seed = rd(); // -r (int); seed do generatora liczb losowych
+int blockSize = 256; // rozmiar bloku

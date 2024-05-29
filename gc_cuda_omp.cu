@@ -22,6 +22,7 @@ extern int stopTime; // -s (int); maksymalny czas działania w sekundach
 extern bool verbose; // -v (int); czy wypisywać printy i dodatkowe dane wyjściowe
 extern int printInterval; // -v (int); co ile generacji wykonać print
 extern unsigned int seed; // -r (int); seed do generatora liczb losowych
+extern int blockSize; // rozmiar bloku
 
 // struktura osobnika
 typedef struct Specimen {
@@ -99,7 +100,7 @@ __global__ void cudaCalculateFitnessKernel(int numOfVertices, int* d_adjacencyMa
 }
 
 // obliczanie jakości osobników w populacji
-void cudaCalculateFitness(int numOfVertices, int* d_adjacencyMatrix, Specimen* population, int populationSize) {
+void cudaCalculateFitness(int numOfVertices, int* d_adjacencyMatrix, Specimen* population, int populationSize, int blockSize, int numBlocks) {
     // spłaszczona tablica struktów Specimen
     int* h_colors = new int[populationSize * numOfVertices]; // spłaszczone tablice kolorów osobników
     int* h_colorNum = new int[populationSize]; // spłaszczone ilości kolorów osobników
@@ -124,8 +125,6 @@ void cudaCalculateFitness(int numOfVertices, int* d_adjacencyMatrix, Specimen* p
     cudaMalloc(&d_colorNum, numVecSize);
     cudaMalloc(&d_conflictNum, numVecSize);
 
-    int blockSize = 256; // rozmiar bloku
-    int numBlocks = (populationSize + blockSize - 1) / blockSize; // ilość bloków
     // uruchamiamy kernel
     cudaCalculateFitnessKernel<<<numBlocks, blockSize>>>(numOfVertices, d_adjacencyMatrix, d_colors, d_colorNum, d_conflictNum, populationSize);
     // pobieramy wynikowe dane z GPU
@@ -295,7 +294,9 @@ int main(int argc, char *argv[]){
     Specimen* population = (Specimen*)malloc(populationSize * sizeof(Specimen));
     initializePopulation(population, populationSize, numOfVertices, rng);
 
-    cudaCalculateFitness(numOfVertices, d_adjacencyMatrix, population, populationSize); // sprawdzanie jakości rozwiązania naiwnego
+    int numBlocks = (populationSize + blockSize - 1) / blockSize; // ilość bloków
+
+    cudaCalculateFitness(numOfVertices, d_adjacencyMatrix, population, populationSize, blockSize, numBlocks); // sprawdzanie jakości rozwiązania naiwnego
     sort(population, population+populationSize); // sortowanie
     Specimen solution = Specimen(population[0]); // zmienna przetrzymująca optymalne rozwiązanie
 
@@ -341,7 +342,7 @@ int main(int argc, char *argv[]){
         }
 
         // obliczamy jakość osobników w populacji na GPU
-        cudaCalculateFitness(numOfVertices, d_adjacencyMatrix, newPopulation, populationSize);
+        cudaCalculateFitness(numOfVertices, d_adjacencyMatrix, newPopulation, populationSize, blockSize, numBlocks);
 
         // kopiujemy nową populację w miejsce starej
         #pragma omp parallel for default(none) shared(populationSize, numOfVertices, population, newPopulation)
