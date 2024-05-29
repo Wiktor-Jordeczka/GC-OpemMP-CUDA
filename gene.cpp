@@ -83,7 +83,7 @@ void display_list(int** list, int max_edges, int edges_num)
 
 void saving(int** list, int v, int edges_num)
 {
-    std::fstream output("data1.txt", std::ios::out);
+    std::fstream output("input/generated.txt", std::ios::out);
 
     output << v << std::endl;
     for (int i = 0; i < edges_num-1; i++)
